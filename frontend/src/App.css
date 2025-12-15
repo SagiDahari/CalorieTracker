@@ -1,0 +1,547 @@
+.dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.daily-summary {
+  background: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.meals-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.meal-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  background: white;
+}
+
+
+.meal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+.meal-totals {
+  display: flex;
+  gap: 15px;
+  font-size: 14px;
+  color: #666;
+}
+
+.foods-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.food-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: #f9f9f9;
+  border-radius: 4px;
+}
+
+.food-info h4 {
+  margin: 0 0 5px 0;
+  font-size: 16px;
+}
+
+.brand {
+  color: #888;
+  font-size: 12px;
+  margin-right: 10px;
+}
+
+.quantity {
+  color: #666;
+  font-size: 14px;
+}
+
+.food-macros {
+  display: flex;
+  gap: 10px;
+  font-size: 14px;
+  color: #666;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 5px 10px;
+}
+
+.delete-btn:hover {
+  background: #ffebee;
+  border-radius: 4px;
+}
+
+.add-food-btn {
+  width: 100%;
+  padding: 10px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.add-food-btn:hover {
+  background: #45a049;
+}
+
+.no-foods {
+  text-align: center;
+  color: #999;
+  padding: 20px;
+}
+
+.search-results {
+    margin-bottom: 15px;
+}
+
+.search-results h4 {
+    padding: 12px;
+    margin: 0;
+    background: #f5f5f5;
+    border-bottom: 2px solid #ddd;
+    font-size: 14px;
+    color: #666;
+}
+
+.results-list {
+    max-height: 400px;
+    overflow-y: auto;
+    background: white;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+}
+
+/* Individual Search Result Item */
+.search-result-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    gap: 15px;
+}
+
+.search-result-item:hover {
+    background: #e3f2fd;
+    border-left: 3px solid #2196F3;
+    padding-left: 13px;
+}
+
+.search-result-item:active {
+    background: #bbdefb;
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+/* Food Details (Left Side) */
+.food-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0; /* Allow text to truncate */
+}
+
+.food-name {
+    font-size: 15px;
+    color: #333;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.brand-name {
+    font-size: 12px;
+    color: #888;
+    font-weight: normal;
+}
+
+/* Macros Preview (Right Side) */
+.food-macros-preview {
+    display: flex;
+    gap: 12px;
+    font-size: 13px;
+    color: #555;
+    flex-shrink: 0;
+}
+
+.macro-item {
+    white-space: nowrap;
+    padding: 4px 8px;
+    background: #f5f5f5;
+    border-radius: 4px;
+}
+
+.search-result-item:hover .macro-item {
+    background: white;
+}
+
+/* Selected Food Section */
+.selected-food-info {
+    background: white;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.selected-macros {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+    padding: 10px;
+    background: #f5f5f5;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.selected-macros span {
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .search-result-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .food-macros-preview {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .macro-item {
+        font-size: 12px;
+        padding: 3px 6px;
+    }
+}
+
+/* Loading State */
+.search-results.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Empty Results */
+.no-results {
+    padding: 40px 20px;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+}
+
+/* Navigation */
+.main-nav {
+    background: #2196F3;
+    padding: 0;
+    display: flex;
+    gap: 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.main-nav a {
+    flex: 1;
+    padding: 15px 30px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: center;
+    transition: background 0.2s;
+    border-bottom: 3px solid transparent;
+}
+
+.main-nav a:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.main-nav a.active {
+    background: rgba(255,255,255,0.2);
+    border-bottom-color: white;
+}
+
+/* Settings Page */
+.settings-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.settings-container {
+    background: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.settings-description {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.settings-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-group .unit {
+    font-weight: normal;
+    font-size: 14px;
+    color: #888;
+}
+
+.form-group input {
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #2196F3;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.reset-btn {
+    flex: 1;
+    padding: 12px;
+    background: #f5f5f5;
+    color: #666;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.2s;
+}
+
+.reset-btn:hover {
+    background: #eee;
+    border-color: #ccc;
+}
+
+.save-btn {
+    flex: 2;
+    padding: 12px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.save-btn:hover {
+    background: #45a049;
+}
+
+.save-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.success-message {
+    padding: 12px;
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Macro Breakdown */
+.macro-breakdown {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 2px solid #eee;
+}
+
+.macro-breakdown h3 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.breakdown-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.breakdown-item, .breakdown-total {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    background: #f9f9f9;
+    border-radius: 4px;
+}
+
+.breakdown-total {
+    background: #e3f2fd;
+    font-weight: 600;
+    border: 2px solid #2196F3;
+}
+
+.macro-label {
+    color: #666;
+}
+
+.macro-value {
+    color: #333;
+    font-weight: 500;
+}
+
+/* Progress Bars */
+.macro-progress {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.macro-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.macro-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.macro-name {
+    font-weight: 600;
+    color: #333;
+}
+
+.macro-values {
+    color: #666;
+    font-size: 14px;
+}
+
+.progress-bar {
+    height: 24px;
+    background: #f0f0f0;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    transition: width 0.3s ease;
+    border-radius: 12px;
+}
+
+.progress-fill.calories {
+    background: linear-gradient(90deg, #FF6B6B, #FF8E53);
+}
+
+.progress-fill.protein {
+    background: linear-gradient(90deg, #4ECDC4, #44A08D);
+}
+
+.progress-fill.carbs {
+    background: linear-gradient(90deg, #A8E6CF, #56C596);
+}
+
+.progress-fill.fats {
+    background: linear-gradient(90deg, #FFD93D, #F9A825);
+}
+
+.percentage {
+    font-size: 12px;
+    color: #888;
+    text-align: right;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .settings-container {
+        padding: 20px;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .reset-btn, .save-btn {
+        flex: 1;
+    }
+}
+
+span {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+div {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h3 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h4 {
+  font-family: Arial, Helvetica, sans-serif;
+}

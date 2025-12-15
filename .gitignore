@@ -1,0 +1,69 @@
+############################
+# OS / Editor
+############################
+.DS_Store
+Thumbs.db
+
+.vscode/
+.idea/
+*.swp
+
+############################
+# Environment variables
+############################
+.env
+.env.*
+!.env.example
+
+############################
+# Node / JavaScript
+############################
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+############################
+# Frontend build output
+############################
+frontend/dist/
+frontend/build/
+frontend/.next/
+frontend/out/
+
+############################
+# Backend build output
+############################
+backend/dist/
+backend/build/
+backend/coverage/
+
+############################
+# Logs
+############################
+logs/
+*.log
+
+############################
+# Docker
+############################
+docker-data/
+*.pid
+
+############################
+# Database / Cache
+############################
+*.sqlite
+*.db
+redis-data/
+
+############################
+# Tests
+############################
+coverage/
+
+############################
+# Git
+############################
+.git/
