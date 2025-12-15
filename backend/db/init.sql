@@ -1,4 +1,4 @@
-CREATE TABLE food_cache (
+CREATE TABLE IF NOT EXISTS food_cache (
     fdc_id BIGINT PRIMARY KEY,
     description TEXT,
     brand_name TEXT,
@@ -6,7 +6,7 @@ CREATE TABLE food_cache (
     serving_size NUMERIC
 );
 
-CREATE TABLE food_nutrients (
+CREATE TABLE IF NOT EXISTS food_nutrients (
     id SERIAL PRIMARY KEY,
     food_id BIGINT REFERENCES food_cache(fdc_id) ON DELETE CASCADE,
     nutrient_name TEXT,
@@ -14,13 +14,13 @@ CREATE TABLE food_nutrients (
     unit_name TEXT
 );
 
-CREATE TABLE meals (
+CREATE TABLE IF NOT EXISTS meals (
     id SERIAL PRIMARY KEY,
     meal_date DATE NOT NULL DEFAULT CURRENT_DATE,
     meal_type TEXT NOT NULL CHECK (meal_type IN ('breakfast','lunch','dinner','snack'))
 );
 
-CREATE TABLE meal_foods (
+CREATE TABLE IF NOT EXISTS meal_foods (
     id SERIAL PRIMARY KEY,
     meal_id INT REFERENCES meals(id) ON DELETE CASCADE,
     food_id BIGINT REFERENCES food_cache(fdc_id) ON DELETE CASCADE,
