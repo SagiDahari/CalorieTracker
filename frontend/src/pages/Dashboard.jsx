@@ -59,7 +59,7 @@ function Dashboard() {
 
     return (
         <div className="dashboard">
-            <h1>Calorie Tracker</h1>
+            <h1>Nutrition Tracker</h1>
             
             <input 
                 type="date" 
