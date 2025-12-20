@@ -4,7 +4,6 @@
 ![React](https://img.shields.io/badge/React-18-blue)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-14-blue)
 ![Docker](https://img.shields.io/badge/Docker-ready-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
 
 A full-stack web application for tracking daily nutrition and macronutrient intake. Users can log meals, search for foods from the USDA database, and monitor their progress toward nutrition goals.
 
@@ -13,7 +12,6 @@ A full-stack web application for tracking daily nutrition and macronutrient inta
 ![Dashboard](screenshots/dashboard.png)
 ![Meals](screenshots/meals.png)
 
-*(Add actual screenshots!)*
 
 ## ✨ Features
 
@@ -334,7 +332,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 **Sagi Dahari**
 - GitHub: [@SagiDahari](https://github.com/SagiDahari)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/sagi-dahari-582531214)
+- LinkedIn: [Sagi Dahari](https://linkedin.com/in/sagi-dahari-582531214)
 - Email: sagidahari7@gmail.com
 
 ## 🙏 Acknowledgments
