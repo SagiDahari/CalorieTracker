@@ -1,6 +1,7 @@
 import express from 'express';
 import { register, login, logout, getCurrentUser } from '../controllers/authController.js';
 import { authenticateToken } from '../middleware/auth.js';
+import { schemas, validate } from '../middleware/validation.js'
 
 const router = express.Router();
 
@@ -55,7 +56,7 @@ const router = express.Router();
  *       400:
  *         description: Invalid input or email already registered
  */
-router.post('/register', register);
+router.post('/register', validate(schemas.register), register);
 
 /**
  * @swagger
@@ -96,7 +97,7 @@ router.post('/register', register);
  *       401:
  *         description: Invalid credentials
  */
-router.post('/login', login);
+router.post('/login', validate(schemas.login), login);
 
 /**
  * @swagger

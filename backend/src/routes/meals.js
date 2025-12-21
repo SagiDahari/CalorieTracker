@@ -1,6 +1,7 @@
 import express from 'express'
 import { getMealsByDate, getMealById, logFood, deleteFood, deleteMeal } from '../controllers/mealsController.js'
 import { authenticateToken } from '../middleware/auth.js'
+import { schemas, validate } from '../middleware/validation.js'
 
 const router = express.Router();
 
@@ -221,7 +222,7 @@ router.get('/meal/:id', authenticateToken, getMealById);
  *       403:
  *         description: Not authorized to modify this meal
  */
-router.post('/log-food', authenticateToken, logFood);
+router.post('/log-food', authenticateToken, validate(schemas.logFood), logFood);
 
 /**
  * @swagger
