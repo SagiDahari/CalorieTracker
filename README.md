@@ -9,8 +9,8 @@ A full-stack web application for tracking daily nutrition and macronutrient inta
 
 ## 📸 Screenshots
 
-![Dashboard](screenshots/dashboard.png)
-![Meals](screenshots/meals.png)
+![Dashboard](./screenshots/dashboard.png)
+![Meals](./screenshots/meals.png)
 
 
 ## ✨ Features
