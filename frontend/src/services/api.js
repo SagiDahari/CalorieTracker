@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = `${process.env.BACKEND_URL}/api` || "http://localhost:5000/api";
+const API_URL = import.meta.env.BACKEND_URL + 'api' || "http://localhost:5000/api";
 
 const apiClient = axios.create({
     baseURL: API_URL,
