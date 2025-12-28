@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const API_URL = import.meta.env.VITE_BACKEND_URL 
-  ? `${import.meta.env.VITE_BACKEND_URL}/api` 
+const API_URL = process.env.REACT_APP_BACKEND_URL 
+  ? `${process.env.REACT_APP_BACKEND_URL}/api` 
   : "http://localhost:5000/api";
 
 const apiClient = axios.create({
