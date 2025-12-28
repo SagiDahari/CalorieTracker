@@ -4,8 +4,19 @@
 ![React](https://img.shields.io/badge/React-18-blue)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-14-blue)
 ![Docker](https://img.shields.io/badge/Docker-ready-blue)
+![Deployed](https://img.shields.io/badge/Deployed-Live-brightgreen)
 
 A full-stack web application for tracking daily nutrition and macronutrient intake. Users can log meals, search for foods from the USDA database, and monitor their progress toward nutrition goals.
+
+## 🌐 Live Demo
+
+**Try it now:** [https://nutrition-tracker-pearl-theta.vercel.app](https://nutrition-tracker-pearl-theta.vercel.app)
+
+| Service | Platform | URL |
+|---------|----------|-----|
+| Frontend | Vercel | [nutrition-tracker-pearl-theta.vercel.app](https://nutrition-tracker-pearl-theta.vercel.app) |
+| Backend | Railway | [nutritiontracker-production.up.railway.app](https://nutritiontracker-production.up.railway.app) |
+| Database | Railway | PostgreSQL |
 
 ## 📸 Screenshots
 
@@ -39,14 +50,16 @@ A full-stack web application for tracking daily nutrition and macronutrient inta
 - bcrypt
 
 **DevOps:**
-- Docker
-- Docker Compose
+- Docker & Docker Compose (local development)
+- Railway (backend & database hosting)
+- Vercel (frontend hosting)
+
 
 ## 🏗️ Architecture
 ```
 ┌─────────────┐      ┌─────────────┐      ┌─────────────┐
 │   React     │─────▶│   Express   │─────▶│ PostgreSQL  │
-│   Frontend  │      │   Backend   │      │  Database   │
+│   (Vercel)  │      │  (Railway)  │      │  (Railway)  │
 └─────────────┘      └─────────────┘      └─────────────┘
                             │
                             │
@@ -278,11 +291,12 @@ npm test
 
 ## 📁 Project Structure
 ```
-nutrition-tracker/
+NutritionTracker/
 ├── backend/
 │   ├── __tests__/
 │   ├── db/
 │   │   ├── init.sql
+│   │   └── migrate.js
 │   ├── src/
 │   │   ├── config/
 │   │   │   ├── database.js
@@ -351,6 +365,8 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 - [USDA FoodData Central](https://fdc.nal.usda.gov/) for the comprehensive food database API
 - [React](https://reactjs.org/) 
 - [Express](https://expressjs.com/)
+- [Railway](https://railway.app/) for backend hosting
+- [Vercel](https://vercel.com/) for frontend hosting
 
 ---
 

@@ -4,7 +4,7 @@ import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import swaggerUi from 'swagger-ui-express';
 import { swaggerSpec } from './config/swagger.js';
-import { migrate } from './config/migrate.js'
+import { migrate } from '../db/migrate.js'
 
 // Import routes
 import authRoutes from './routes/auth.js';
